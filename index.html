@@ -1,24 +1,202 @@
+
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>auto-ai-rental-hub</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Hub - Portal dla Graczy</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <i class="fas fa-gamepad"></i>
+                    Gaming Hub
+                </div>
+                <div class="nav-menu">
+                    <button class="nav-item active" data-page="home">
+                        <i class="fas fa-home"></i>
+                        Strona Główna
+                    </button>
+                    <button class="nav-item" data-page="games">
+                        <i class="fas fa-gamepad"></i>
+                        Gry
+                    </button>
+                    <button class="nav-item" data-page="profile">
+                        <i class="fas fa-user"></i>
+                        Profil
+                    </button>
+                </div>
+            </div>
+        </nav>
 
-    <meta property="og:title" content="auto-ai-rental-hub" />
-    <meta property="og:description" content="Lovable Generated Project" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Home Page -->
+            <div id="home-page" class="page active">
+                <div class="hero-section">
+                    <h1>Witaj w Gaming Hub</h1>
+                    <p>Odkryj najlepsze gry, otrzymuj spersonalizowane rekomendacje i śledź swoje osiągnięcia</p>
+                </div>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
+                <section class="featured-games">
+                    <h2>Polecane Gry</h2>
+                    <div id="featured-games-grid" class="games-grid">
+                        <!-- Games will be loaded here by JavaScript -->
+                    </div>
+                </section>
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+                <section class="ai-recommendations">
+                    <div class="ai-card">
+                        <div class="ai-header">
+                            <div class="ai-icon">AI</div>
+                            <h3>Rekomendacje AI dla Ciebie</h3>
+                        </div>
+                        <div class="ai-content">
+                            <div class="user-analysis">
+                                <h4>Analiza profilu:</h4>
+                                <div class="genres">
+                                    <span class="genre-tag">RPG</span>
+                                    <span class="genre-tag">Action</span>
+                                    <span class="genre-tag">Strategy</span>
+                                </div>
+                                <p>Poziom 15 • 42 gier • 127 osiągnięć</p>
+                            </div>
+                            <div class="ai-insights">
+                                <h4>AI Insights:</h4>
+                                <p>Na podstawie Twojej aktywności, AI wykrył preferencje do gier fabularnych z bogatym światem i charakterystycznymi postaciami.</p>
+                            </div>
+                        </div>
+                        <div id="ai-recommended-games" class="recommended-games">
+                            <!-- AI recommended games will be loaded here -->
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Games Page -->
+            <div id="games-page" class="page">
+                <div class="page-header">
+                    <h1>Biblioteka Gier</h1>
+                    <div class="search-filters">
+                        <input type="text" id="game-search" placeholder="Szukaj gier..." class="search-input">
+                        <select id="genre-filter" class="filter-select">
+                            <option value="">Wszystkie gatunki</option>
+                            <option value="RPG">RPG</option>
+                            <option value="Action">Action</option>
+                            <option value="Strategy">Strategy</option>
+                            <option value="Adventure">Adventure</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="all-games-grid" class="games-grid">
+                    <!-- All games will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Profile Page -->
+            <div id="profile-page" class="page">
+                <div class="profile-container">
+                    <div class="profile-header">
+                        <div class="profile-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="profile-info">
+                            <h1>Jan Kowalski</h1>
+                            <p>Gracz od 2020 roku</p>
+                        </div>
+                    </div>
+
+                    <div class="profile-stats">
+                        <div class="stat-card">
+                            <div class="stat-number">42</div>
+                            <div class="stat-label">Gier w bibliotece</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">127</div>
+                            <div class="stat-label">Osiągnięć</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">15</div>
+                            <div class="stat-label">Poziom</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">320</div>
+                            <div class="stat-label">Godzin grania</div>
+                        </div>
+                    </div>
+
+                    <div class="profile-sections">
+                        <div class="section">
+                            <h3>Ulubione Gatunki</h3>
+                            <div class="genres">
+                                <span class="genre-tag">RPG</span>
+                                <span class="genre-tag">Action</span>
+                                <span class="genre-tag">Strategy</span>
+                            </div>
+                        </div>
+
+                        <div class="section">
+                            <h3>Ostatnie Osiągnięcia</h3>
+                            <div class="achievements">
+                                <div class="achievement">
+                                    <i class="fas fa-trophy"></i>
+                                    <span>Mistrz RPG - Ukończ 10 gier RPG</span>
+                                </div>
+                                <div class="achievement">
+                                    <i class="fas fa-star"></i>
+                                    <span>Kolekcjoner - Dodaj 50 gier do biblioteki</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="section ai-insights-section">
+                            <h3>AI Insights</h3>
+                            <div class="ai-insight">
+                                <i class="fas fa-brain"></i>
+                                <p>Twój profil wskazuje na zamiłowanie do gier z głęboką fabułą i rozbudowanymi systemami postaci.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Chatbot -->
+        <div id="chatbot" class="chatbot">
+            <div class="chatbot-header" id="chatbot-header">
+                <i class="fas fa-robot"></i>
+                <span>AI Asystent</span>
+                <button id="chatbot-toggle" class="chatbot-toggle">
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+            </div>
+            <div class="chatbot-body" id="chatbot-body">
+                <div class="chatbot-messages" id="chatbot-messages">
+                    <div class="message bot-message">
+                        <div class="message-content">
+                            Cześć! Jestem AI asystentem Gaming Hub. Mogę pomóc Ci znaleźć idealne gry na podstawie Twoich preferencji. Jaki gatunek gier Cię interesuje?
+                        </div>
+                    </div>
+                </div>
+                <div class="chatbot-input">
+                    <input type="text" id="chatbot-input-field" placeholder="Napisz wiadomość..." maxlength="200">
+                    <button id="chatbot-send" class="send-btn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/chatbot.js"></script>
+    <script src="js/main.js"></script>
+</body>
 </html>
