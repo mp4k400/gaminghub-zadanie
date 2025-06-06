@@ -109,6 +109,11 @@ class ChatBot {
     generateResponse(message) {
         const lowerMessage = message.toLowerCase();
         
+        // Special TEB command
+        if (lowerMessage.includes('teb')) {
+            return 'TEB - Oto link do strony Technikum: <a href="https://technikum.pl" target="_blank" style="color: #007bff; text-decoration: underline;">https://technikum.pl</a>';
+        }
+        
         // Check for specific game genres
         if (lowerMessage.includes('rpg') || lowerMessage.includes('ról')) {
             return this.getRandomResponse('rpg');
@@ -142,7 +147,7 @@ class ChatBot {
         
         // Check for help requests
         if (lowerMessage.includes('pomoc') || lowerMessage.includes('help')) {
-            return 'Mogę pomóc Ci znaleźć gry według gatunku (RPG, Action, Strategy, Adventure) lub odpowiedzieć na pytania o konkretne tytuły. Czego szukasz?';
+            return 'Mogę pomóc Ci znaleźć gry według gatunku (RPG, Action, Strategy, Adventure) lub odpowiedzieć na pytania o konkretne tytuły. Czego szukasz? Możesz też napisać "TEB" aby otrzymać link do Technikum.';
         }
         
         // Default responses
